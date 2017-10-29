@@ -158,7 +158,7 @@ $db['default'] = array(
 
 	'password' => '',
 
-	'database' => 'viaemmaus_db',
+	'database' => 'viaemmaus',
 
 	'dbdriver' => 'mysqli',
 
