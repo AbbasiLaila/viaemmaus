@@ -1,0 +1,14 @@
+[24-Oct-2017 10:07:47 UTC] PHP Fatal error:  Cannot redeclare front::programs() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 174
+[24-Oct-2017 10:08:39 UTC] PHP Fatal error:  Cannot redeclare main_model::get_all_data_pagination() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/models/Main_model.php on line 134
+[24-Oct-2017 10:09:00 UTC] PHP Fatal error:  Cannot redeclare main_model::get_all_data_pagination() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/models/Main_model.php on line 134
+[24-Oct-2017 10:09:03 UTC] PHP Fatal error:  Cannot redeclare main_model::get_all_data_pagination() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/models/Main_model.php on line 134
+[24-Oct-2017 13:09:06 Asia/Jerusalem] PHP Fatal error:  Call to a member function initialize() on null in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 109
+[24-Oct-2017 13:10:44 Asia/Jerusalem] PHP Fatal error:  Call to a member function initialize() on null in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 161
+[24-Oct-2017 14:13:23 Asia/Jerusalem] PHP Fatal error:  Call to undefined method main_model::searchvideos() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 516
+[24-Oct-2017 15:06:23 Asia/Jerusalem] PHP Fatal error:  Call to undefined method main_model::searchmanin() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 518
+[24-Oct-2017 15:06:44 Asia/Jerusalem] PHP Fatal error:  Call to undefined method main_model::searchmanin() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 518
+[24-Oct-2017 15:06:49 Asia/Jerusalem] PHP Fatal error:  Call to undefined method main_model::searchmanin() in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Front.php on line 518
+[24-Oct-2017 15:32:55 Asia/Jerusalem] PHP Parse error:  syntax error, unexpected '?' in /home/abbasweb/public_html/media-clouds.net/saintyves/application/views/front/search.php on line 64
+[25-Oct-2017 09:59:05 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Publications.php on line 80
+[25-Oct-2017 09:59:27 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Publications.php on line 148
+[25-Oct-2017 09:59:31 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/abbasweb/public_html/media-clouds.net/saintyves/application/controllers/Publications.php on line 148
