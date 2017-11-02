@@ -20,12 +20,8 @@ class Auth extends CI_Controller {
 
     	$this->data['title']="CMS Adminstration";
 		date_default_timezone_set("Asia/Jerusalem");
-		
-		$this->data['pages']=$this->main_model->get_all_data('pages');
+        $this->data['pages']      = $this->main_model->get_all_data('pages');
 
-		$this->data['aboutPages']=$this->main_model->getSubPages(1);
-        $this->data['workPages'] = $this->main_model->getSubPages(2);
-		$this->lang->load('auth');
 
 	}
 

@@ -104,6 +104,66 @@ $route['default_controller'] = 'front';
 
 $route['home'] = 'front';
 
+/*About Us*/
+$route['admin/about/(:any)'] = 'admin/page/$1';
+$route['admin/why_us/edit/(:any)'] = 'admin/edit_why_us/$1';
+
+/*Services*/
+$route['admin/services'] = 'services';
+$route['admin/services/add'] = 'services/add';
+$route['admin/services/edit/(:any)'] = 'services/edit/$1';
+$route['admin/services/delete/(:any)'] = 'services/delete/$1';
+$route['admin/services/highlights'] = 'services/highlights';
+
+
+/*Tours*/
+$route['admin/tours'] = 'tours';
+$route['admin/tours/add'] = 'tours/add';
+$route['admin/tours/edit/(:any)'] = 'tours/edit/$1';
+$route['admin/tours/delete/(:any)'] = 'tours/delete/$1';
+$route['admin/tour/(:any)'] = 'tours/view/$1';
+$route['admin/tour/program/add/(:any)'] = 'tours/add_day/$1';
+$route['admin/tour/program/edit/(:any)'] = 'tours/edit_day/$1';
+$route['admin/tours/delete_day/(:any)'] = 'tours/delete_day/$1';
+$route['admin/tours/deleteDayImage/(:any)'] = 'tours/delete_dayimg/$1';
+$route['admin/tours/deleteAllDayImages/(:any)'] = 'tours/deleteAllDayImages/$1';
+$route['admin/tours/deleteDayVideo/(:any)'] = 'tours/delete_dayvideo/$1';
+$route['admin/tours/deleteAllDayVideos/(:any)'] = 'tours/deleteAllDayVideos/$1';
+/*Tour old images*/
+$route['admin/tour/gallery/add/(:any)'] = 'tours/add_image/$1';
+$route['admin/tour/gallery/edit/(:any)'] = 'tours/edit_image/$1';
+$route['admin/tours/delete_img/(:any)'] = 'tours/delete_img/$1';
+
+
+/*Pages*/
+
+$route['admin/privacy'] = 'admin/page/privacy';
+$route['admin/terms'] = 'admin/page/terms';
+
+
+/*Gallery Albums*/
+$route['admin/gallery'] = 'gallery';
+$route['admin/gallery/albums/add'] = 'gallery/add_album';
+$route['admin/gallery/albums/edit/(:any)'] = 'gallery/edit_album/$1';
+$route['admin/gallery/albums/delete/(:any)'] = 'gallery/delete_album/$1';
+
+/*Gallery Albums Images*/
+
+$route['admin/gallery/images'] = 'gallery/images';
+$route['admin/gallery/images/add'] = 'gallery/add_image';
+$route['admin/gallery/images/edit/(:any)'] = 'gallery/edit_image/$1';
+$route['admin/gallery/images/delete/(:any)'] = 'gallery/delete_image/$1';
+
+
+/*Files*/
+$route['admin/files'] = 'files';
+$route['admin/files/add'] = 'files/add';
+
+/*Users*/
+$route['admin/users'] = 'admin/users';
+$route['admin/users/add'] = 'auth/create_user';
+$route['admin/users/edit/(:any)'] = 'auth/edit_user/$1';
+
 
 $route['language/spanish'] = "front/language";
 $route['language/english'] = "front/language";

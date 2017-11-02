@@ -4,57 +4,34 @@
 <li><a href="<?php echo base_url('admin/users')?>"><i class="fa fa-users"></i> <span>CMS Users</span></a></li>
 <?php } ?>
 
-<li><a href="<?php echo base_url('admin/slider')?>"><i class="fa fa-image "></i> <span>Silder</span></a></li>
 
 
 <li class="treeview"> <a href="#"> <i class="fa fa-info"></i> <span>About</span> <i class="fa fa-angle-left pull-right"></i> </a>
   <ul class="treeview-menu">
-    <?php foreach ($aboutPages as $page) {?>
-        <li><a href="<?php echo base_url('admin/page/'.$page['name'])?>"><span><?=$page['en_title']?></span></a></li>
-   <?php } ?>
-  <li><a href="<?php echo base_url('admin/departments')?>"> <span>Departments</span></a></li>
+      <li><a href="<?php echo base_url('admin/about/overview')?>"> <span>Overview</span></a></li>
+      <li><a href="<?php echo base_url('admin/about/holy_land')?>"> <span>Holy Land</span></a></li>
+      <li><a href="<?php echo base_url('admin/about/why_us')?>"> <span>Why Us</span></a></li>
 
   </ul>
 </li>
+<li><a href="<?php echo base_url('admin/services/highlights')?>"><i class="fa fa-tags "></i> <span>Highlighted Services</span></a></li>
 
-<li class="treeview"> <a href="#"> <i class="fa fa-suitcase"></i> <span>Our Work</span> <i class="fa fa-angle-left pull-right"></i> </a>
-  <ul class="treeview-menu">
-    <?php foreach ($workPages as $page) { if($page['name']=="programs"){?>
-    <li><a href="<?php echo base_url('admin/programs')?>"><span>Programs</span></a></li>
-<?php }else{?>
-        <li><a href="<?php echo base_url('admin/page/'.$page['name'])?>"><span><?=$page['en_title']?></span></a></li>
-   <?php } } ?>
+<li><a href="<?php echo base_url('admin/services')?>"><i class="fa fa-tags "></i> <span>Services</span></a></li>
 
-  </ul>
-</li>
+<li><a href="<?php echo base_url('admin/tours')?>"><i class="fa fa-plane"></i> <span>Tours</span></a></li>
 
-<li><a href="<?php echo base_url('admin/categories')?>"><i class="fa fa-tags "></i> <span>Issues Categories</span></a></li>
 
-<li><a href="<?php echo base_url('admin/issues')?>"><i class="fa fa-tags "></i> <span>Main Issues</span></a></li>
 
+<li><a href="<?php echo base_url('admin/privacy')?>"><i class="fa fa-lock "></i> <span>Privacy Policy</span></a></li>
+<li><a href="<?php echo base_url('admin/terms')?>"><i class="fa fa-gavel "></i> <span>Terms of use</span></a></li>
 <li class="treeview"> <a href="#"> <i class="fa fa-image"></i> <span>Gallery</span> <i class="fa fa-angle-left pull-right"></i> </a>
   <ul class="treeview-menu">
-    <li><a href="<?php echo base_url('admin/gallery/categories')?>"><span>Gallery Categories</span></a></li>
-    <li><a href="<?php echo base_url('admin/gallery/albums')?>"><span>Photo Gallery Albums</span></a></li>
+    <li><a href="<?php echo base_url('admin/gallery')?>"><span>Gallery Albums</span></a></li>
     <li><a href="<?php echo base_url('admin/gallery/images')?>"><span>Album Images</span></a></li>
 
-    <li><a href="<?php echo base_url('admin/gallery/videos')?>"> <span>Video Gallery</span></a></li>
 
   </ul>
 </li>
-
-<li><a href="<?php echo base_url('admin/publications')?>"><i class="fa fa-files-o "></i> <span>Publications</span></a></li>
-
-<li><a href="<?php echo base_url('admin/news')?>"><i class="fa fa-newspaper-o "></i> <span>News</span></a></li>
-
-
-
-
-
-<li><a href="<?php echo base_url('admin/donors')?>"><i class="fa fa-money "></i> <span>Donors</span></a></li>
-<li><a href="<?php echo base_url('admin/faq')?>"><i class="fa fa-question-circle "></i> <span>FAQ</span></a></li>
-<li><a href="<?php echo base_url('admin/content/links')?>"><i class="fa fa-link "></i> <span>Links</span></a></li>
-
 
 <li><a href="<?php echo base_url('admin/files')?>"><i class="fa fa-file "></i> <span>Upload Files</span></a></li>
 <li><a href="<?php echo base_url('admin/contact')?>"><i class="fa fa-info-circle "></i> <span>Contact Us</span></a></li>

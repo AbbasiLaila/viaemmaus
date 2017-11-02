@@ -13,11 +13,11 @@ class validation_model extends CI_Model {
 					'rules' => 'required'
 
 			),
-		     'ar_title' => array (
+		     'sp_title' => array (
 
-					'field' => 'ar_title',
+					'field' => 'sp_title',
 
-					'label' => 'Arabic title',
+					'label' => 'Spanish title',
 
 					'rules' => 'required'
 
@@ -26,7 +26,7 @@ class validation_model extends CI_Model {
 	
 );
 
-	public $slide = array(
+	public $title = array(
 
 		     'en_title' => array (
 
@@ -37,42 +37,16 @@ class validation_model extends CI_Model {
 					'rules' => 'required'
 
 			),
-		     'ar_title' => array (
+		   'sp_title' => array (
 
-					'field' => 'ar_title',
+					'field' => 'sp_title',
 
-					'label' => 'Arabic title',
-
-					'rules' => 'required'
-
-			),
-			   'en_description' => array (
-
-					'field' => 'en_description',
-
-					'label' => 'English Description',
+					'label' => 'Spanish title',
 
 					'rules' => 'required'
 
 			),
-		     'ar_description' => array (
-
-					'field' => 'ar_title',
-
-					'label' => 'Arabic Description',
-
-					'rules' => 'required'
-
-			),
-			 'link' => array (
-
-					'field' => 'link',
-
-					'label' => 'Link',
-
-					'rules' => 'required'
-
-			),
+			
 
 	
 );
@@ -466,11 +440,11 @@ public $seo = array(
 
 			
 
-			'ar_seo_title' => array (
+			'sp_seo_title' => array (
 
-					'field' => 'ar_seo_title',
+					'field' => 'sp_seo_title',
 
-					'label' => 'Arabic SEO Title',
+					'label' => 'Spanish SEO Title',
 
 					'rules' => 'required'
 

@@ -9,10 +9,10 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>St. Yves Admin Panel | Log in</title>
+    <title>Via Ammaus Admin Panel | Log in</title>
 
     <!-- Tell the browser to be responsive to screen width -->
-  	<link rel="shortcut icon" href="<?php echo base_url('assets/images/styves-logo.jpg')?>">
+  	<link rel="shortcut icon" href="<?php echo base_url('assets/adminPanel/images/via_ammaus.png')?>">
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -45,7 +45,7 @@
 
       <div class="login-box-body">
  <div class="login-logo">
-         <a href="<?=base_url('auth')?>" class="logo"><img  width="180px" src="<?= base_url('assets/images/styves-logo.png')?>" alt=""></a>
+         <a href="<?=base_url('auth')?>" class="logo"><img  width="180px" src="<?= base_url('assets/adminPanel/images/via_ammaus.png')?>" alt=""></a>
          </div>
         <p class="login-box-msg">Sign in to start your session</p>
 

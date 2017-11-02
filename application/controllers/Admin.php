@@ -10,8 +10,7 @@ class admin extends CI_Controller {
             redirect('auth', 'refresh');
         }
         $this->data['pages']      = $this->main_model->get_all_data('pages');
-        $this->data['aboutPages'] = $this->main_model->getSubPages(1);
-        $this->data['workPages'] = $this->main_model->getSubPages(2);
+
     }
     public function index() {
         $this->load->view('admin/include/head', $this->data);
@@ -21,7 +20,7 @@ class admin extends CI_Controller {
     public function users() {
         if ($this->ion_auth->in_group('super')) {
             $this->data['users'] = $this->ion_auth->users(1)->result();
-            $this->load->view('admin/include/head');
+            $this->load->view('admin/include/head',$this->data);
             $this->load->view('admin/users/index', $this->data);
             $this->load->view('admin/include/footer');
         } else {
@@ -33,6 +32,76 @@ class admin extends CI_Controller {
             $this->main_model->deleteData('users', $id);
         }
     }
+
+    /*About/Why us*/
+    public function why_us()
+    {
+        $this->data['data']=$this->main_model->get_all_data('why_us');
+        $this->load->view('admin/include/head',$this->data);
+        $this->load->view('admin/about/why_us',$this->data);
+        $this->load->view('admin/include/footer');
+    }
+    public function edit_why_us($id)
+    {       
+    if($this->main_model->check($id, "why_us")==false){
+
+            show_404();
+
+        }
+        else{
+        if($_POST){  
+            $rules = $this->validation_model->title;
+                $this->form_validation->set_rules($rules);
+                if ($this->form_validation->run() == false)
+                    {
+                    $this->data['errors'] = $this->form_validation->error_array();
+                } else
+                    {
+                $this->data['upload_response']="";
+                $data = array(
+                   'en_title' => $this->input->post('en_title'),
+                    'sp_title' => $this->input->post('sp_title'),
+                    'en_description' => $this->input->post('en_description'),
+                    'sp_description' => $this->input->post('sp_description'),
+
+            );
+
+            if($_FILES['image']['name'] !=""){
+                 if($this->upload_image('image'))
+            {
+               $data['image']=$this->upload_image('image'); 
+
+            }else{
+                $this->data['upload_response'] =  $this->upload->display_errors();
+            $this->session->set_flashdata('dataEdited', ''); 
+
+                }
+
+            }
+            
+
+            if($this->data['upload_response'] == ""){
+                        
+            $return=$this->main_model->updateData($id,"why_us",$data);
+            $this->session->set_flashdata('dataEdited', '<div class="alert alert-success" role="alert">   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Data edited successfully</div>'); 
+        }
+    }
+    
+
+}
+
+    $this->data['data']=$this->main_model->getItem('why_us',$id);
+
+    $this->load->view('admin/include/head',$this->data);
+    $this->load->view('admin/about/edit_why_us',$this->data);
+    $this->load->view('admin/include/footer');
+    }
+}
+
+
+
+
     public function support() {
         if ($_POST) { //If the form is posted-> validate data
             // Validation Check
@@ -161,11 +230,11 @@ For complaints please call +970 56 969 1 969');
                     $this->data['seo'] = $this->main_model->getItemByname('pages', $name);
                     $data              = array(
                         'en_seo_title' => $this->input->post('en_seo_title'),
-                        'ar_seo_title' => $this->input->post('ar_seo_title'),
+                        'sp_seo_title' => $this->input->post('sp_seo_title'),
                         'en_seo_description' => $this->input->post('en_seo_description'),
-                        'ar_seo_description' => $this->input->post('ar_seo_description'),
-                        'en_keys' => $this->input->post('en_keys'),
-                        'ar_keys' => $this->input->post('ar_keys')
+                        'sp_seo_description' => $this->input->post('sp_seo_description'),
+                        'en_keywords' => $this->input->post('en_keywords'),
+                        'sp_keywords' => $this->input->post('sp_keywords')
                     ); //form data array
                     $return            = $this->main_model->updateData($this->data['seo']->id, "pages", $data); //submit to database
                     $this->session->set_flashdata('seoUpdated', '<div class="alert alert-success" role="alert">   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -177,12 +246,17 @@ For complaints please call +970 56 969 1 969');
             $this->load->view('admin/seo', $this->data);
             $this->load->view('admin/include/footer');
         }
-    }public function content($name) {
+    }
+   
+    public function page($name) {
         $this->session->set_flashdata('pageEdited', '');
+         if($name=="why_us"){
+                redirect('admin/why_us');
+            }
         if ($this->main_model->check_name($name, "pages") == false) {
             show_404();
         } else {
-           
+        	
             if ($_POST) { //If the form is posted-> validate data
                 // Validation Check
                 $rules = $this->validation_model->page;
@@ -193,12 +267,13 @@ For complaints please call +970 56 969 1 969');
                 } else
                 // form input is valid, NO errors
                     {
+                    $this->data['upload_response'] = "";
                     $this->data['page']         = $this->main_model->getItemByname('pages', $name);
                     $data                          = array(
                         'en_title' => $this->input->post('en_title'),
-                        'ar_title' => $this->input->post('ar_title'),
-                        'en_content' => $this->input->post('en_content'),
-                        'ar_content' => $this->input->post('ar_content'),
+                        'sp_title' => $this->input->post('sp_title'),
+                        'en_description' => $this->input->post('en_description'),
+                        'sp_description' => $this->input->post('sp_description'),
 
                     ); //form data array
                    
@@ -211,62 +286,12 @@ For complaints please call +970 56 969 1 969');
             $this->data['page'] = $this->main_model->getItemByname('pages', $name);
 
             $this->load->view('admin/include/head', $this->data);
-            $this->load->view('admin/content', $this->data);
-            $this->load->view('admin/include/footer');
-        }
-    }
-   
-    public function page($name) {
-        $this->session->set_flashdata('pageEdited', '');
-        if ($this->main_model->check_name($name, "sub_pages") == false) {
-            show_404();
-        } else {
-        	if($name=="board"){
-        		redirect('board');
-        	}
-        	else if($name=="staff"){
-        		redirect('staff');
-        	}
-            else if($name=="vacancies"){
-                redirect('vacancies');
-            }
-            if ($_POST) { //If the form is posted-> validate data
-                // Validation Check
-                $rules = $this->validation_model->page;
-                $this->form_validation->set_rules($rules);
-                if ($this->form_validation->run() == false) //If Form validation errors exist
-                    {
-                    $this->data['errors'] = $this->form_validation->error_array();
-                } else
-                // form input is valid, NO errors
-                    {
-                    $this->data['upload_response'] = "";
-                    $this->data['page']         = $this->main_model->getItemByname('sub_pages', $name);
-                    $data                          = array(
-                        'en_title' => $this->input->post('en_title'),
-                        'ar_title' => $this->input->post('ar_title'),
-                        'en_description' => $this->input->post('en_description'),
-                        'ar_description' => $this->input->post('ar_description'),
-                        'url' => $this->safeUrl($this->input->post('en_title'))
-
-                    ); //form data array
-                   
-                       $this->main_model->updateData($this->data['page']->id, "sub_pages", $data); //submit to database
-                        $this->session->set_flashdata('pageEdited', '<div class="alert alert-success" role="alert">   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-               Page Data has been updated successfully.</div>');
-                    
-                }
-            }
-            $this->data['page'] = $this->main_model->getItemByname('sub_pages', $name);
-
-            $this->load->view('admin/include/head', $this->data);
             $this->load->view('admin/page', $this->data);
             $this->load->view('admin/include/footer');
         }
     }
     public function contact() {
         $this->data['contact'] = $this->main_model->getItem('contact', '1');
-        $this->data['offices'] = $this->main_model->get_all_data('offices');
         $this->load->view('admin/include/head', $this->data);
         $this->load->view('admin/contact');
         $this->load->view('admin/include/footer');
@@ -281,15 +306,7 @@ For complaints please call +970 56 969 1 969');
         echo $this->input->post('value');
     }
 
-    public function update_office() {
-        $id            = intval($this->input->post('pk'));
-        $name_of_column = $this->input->post('name');
-        $data          = array(
-            $name_of_column => $this->input->post('value')
-        );
-        $this->main_model->updateData($id, 'offices', $data);
-        echo $this->input->post('value');
-    }
+   
 
 
     function upload_image2() { // HERE SET THE PATH TO THE FOLDER WITH IMAGES ON YOUR SERVER (RELATIVE TO THE ROOT OF YOUR WEBSITE ON SERVER)
