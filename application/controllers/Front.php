@@ -12,6 +12,84 @@ class front extends MY_Controller {
 		$this->load->view('front/index',$this->data);
 		$this->load->view('front/include/footer',$this->data);
     }
+
+    public function about() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/about',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function services() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/services',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function service() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/service',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function itineraries() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/itineraries',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function tour() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/tour',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function gallery() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/gallery',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function album() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/album',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function rating() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/rating',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+    public function contact() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/contact',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+     public function privacy() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/privacy',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
+     public function terms() {
+        
+        $this->load->view('front/include/head',$this->data);
+        $this->load->view('front/terms',$this->data);
+        $this->load->view('front/include/footer',$this->data);
+    }
+
     public function show_404() {
         
         $this->load->view('front/include/head',$this->data);
