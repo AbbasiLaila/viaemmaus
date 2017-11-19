@@ -108,8 +108,55 @@ function deleteData($table,$id)
 		}
 
 } 
+function getTourImages($id){
+
+    $query=$this->db->select('*')
+
+                  ->from('tour_images')
+
+                  ->where('tour_id', $id)
+
+                  ->get();
+
+    return $query->result_array();  
+
+}
+
+function getTourDays($id){
+
+    $query=$this->db->select('*')
+
+                  ->from('tour_days')
+
+                  ->where('tour_id', $id)
+
+                  ->get();
+
+    return $query->result_array();  
+
+}
 
 
+
+function get_highlights(){
+
+  $sort='id';
+    $order='DESC';
+
+
+    $query=$this->db->select('*')
+
+                  ->from('services')
+
+                  ->where('highlight', '1')
+          
+                ->order_by($sort, $order)
+        
+                  ->get();
+
+    return $query->result_array();  
+
+}
 function get_all_issues_pagination($category_id,$start,$sort,$limit){
 
   $sort=$sort;
@@ -179,6 +226,32 @@ function getSubPages($id){
     return $query->result_array();  
 
 }
+function getDayImages($id){
+
+    $query=$this->db->select('*')
+
+                  ->from('day_images')
+
+                  ->where('day_id', $id)
+
+                  ->get();
+
+    return $query->result_array();  
+
+}
+function getDayVideos($id){
+
+    $query=$this->db->select('*')
+
+                  ->from('day_videos')
+
+                  ->where('day_id', $id)
+
+                  ->get();
+
+    return $query->result_array();  
+
+}
 function getAlbumImages($id){
 
     $query=$this->db->select('*')
@@ -193,89 +266,9 @@ function getAlbumImages($id){
 
 }
 
-function getCategoryIssues($id){
-
-    $query=$this->db->select('*')
-
-                  ->from('main_issues')
-
-                  ->where('category_id', $id)
-
-                  ->get();
-
-    return $query->result_array();  
-
-}
-
-function getGalleryImages($id){
-
-		$query=$this->db->select('*')
-
-                  ->from('news_images')
-
-                  ->where('news_id', $id)
-
-                  ->get();
-
-		return $query->result_array(); 	
-
-}
-
- function getAlbums(){
-  $query = $this->db->select('*,photo_gallery.id as id,photo_gallery.url as url,photo_gallery.en_title as en_title, photo_gallery.ar_title as ar_title,gallery_categories.en_title as en_category, gallery_categories.ar_title as ar_category')
-                  ->from('photo_gallery')
-                  ->join('gallery_categories', 'gallery_categories.id = photo_gallery.category_id')
-                  ->get();
-
-return $query->result_array();
- }
-
- function getVideos(){
-  $query = $this->db->select('*,videos.id as id,videos.en_title as en_title, videos.ar_title as ar_title,gallery_categories.en_title as en_category, gallery_categories.ar_title as ar_category')
-                  ->from('videos')
-                  ->join('gallery_categories', 'gallery_categories.id = videos.category_id')
-                  ->get();
-
-return $query->result_array();
- }
-
- function getAlbum($id){
-  $query = $this->db->select('*,photo_gallery.id as id,photo_gallery.url as url,photo_gallery.en_title as en_title, photo_gallery.ar_title as ar_title,gallery_categories.en_title as en_category, gallery_categories.ar_title as ar_category')
-                  ->from('photo_gallery')
-                  ->where('photo_gallery.id', $id)
-                  ->join('gallery_categories', 'gallery_categories.id = photo_gallery.category_id')
-                  ->get();
-
-return $query->row();
- }
 
 
-function getJobs(){
- $date = new DateTime("now");
 
- $curr_date = $date->format('Y-m-d ');
-    $query=$this->db->select('*')
-
-           ->from('vacancies')
-           ->where('vacancies.deadline >=', $curr_date)
-          ->order_by('vacancies.date', 'DESC')
-
-          ->get();
-
-  return $query->result_array();
-
-}
-function get_departments(){
-
-    $query=$this->db->select('*')
-
-           ->from('departments')
-
-          ->get();
-
-  return $query->result();;  
-
-}
 function getDepartmentMembers($id){
 
     $query=$this->db->select('*')
@@ -430,16 +423,28 @@ function searchcategories($keyword){
     }
     
 
-
-function deletebrandImages($id){
+function deletedayVideos($id){
 
 if ($id != NULL)
 
     {
 
-        $this->db->where('brand_id', $id);                    
+        $this->db->where('day_id', $id);                    
 
-        $this->db->delete('brands_images');                        
+        $this->db->delete('day_videos');                        
+
+    }
+
+}
+function deletedayImages($id){
+
+if ($id != NULL)
+
+    {
+
+        $this->db->where('day_id', $id);                    
+
+        $this->db->delete('day_images');                        
 
     }
 
