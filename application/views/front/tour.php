@@ -22,18 +22,13 @@
     <div class="section mini-section">
       <div class="inner-small-container no-bottom-margin">
           <div class="box-container rating-inner">
-            <div class="grid-3">
+            <div class="grid-2">
               <h3>Duration</h3>
               <span class="info-span">3 Days</span>
             </div>
-            <div class="grid-3">
+            <div class="grid-2">
               <h3>Location</h3>
               <span class="info-span">Jerusalem & Bethlehem</span>
-            </div>
-
-            <div class="grid-3">
-              <h3>Date</h3>
-              <span class="info-span">Oct 16 2017, Mon</span>
             </div>
 
                   <button class="btn btn-gold btn-small"  data-toggle="modal" data-target="#bookTour">Book a Tour</button>

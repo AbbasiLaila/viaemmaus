@@ -243,7 +243,7 @@ body {
 		top:0;
 		left:60px;
 		width: 300px;
-    	height: 170px;
+    	height: 75px;
     	z-index: 999;
     	font-size: 16px;
     	color: $primary-white-color;
@@ -261,6 +261,9 @@ body {
 	    		position: relative;
 	    		top: 5px;
 	    	}
+	    }
+	    p{
+	    	display: inline-block;
 	    }
 	    .top-15{
 	    	top: 13px;
@@ -2214,23 +2217,23 @@ $zindex-modal:             1050 !default;
     }
 
     .top-section{
-    	height: 33.333vh;
+    	height: 50vh;
     	.grid-3{
     		width: 100% !important;
-    		height: 33.333vh !important;
+    		height: 50vh !important;
     		.service-container{
-    			height: 33.333vh !important;
+    			height: 50vh !important;
     			h1{
     				font-size: 20px !important;
-    				bottom:10px !important;
+    				bottom:50px !important;
     			}
     		}
     	}
     }
 
     .header .logo-space{
-    	width: 150px;
-    	height: 115px;		
+    	width: 180px;
+    	height: 95px;		
     }
     .header .logo-space a img{
     	max-height:75px;
@@ -2247,7 +2250,7 @@ $zindex-modal:             1050 !default;
     }
 
     .page-container .inner-page .service{
-    	width: 70%;
+    	width: 90%;
     }
     .tour .days-details .day .circle-box{
     	position:absolute;
@@ -2274,15 +2277,161 @@ $zindex-modal:             1050 !default;
     	padding:0;
     }
     .modal-dialog{
-    	width: 75%;
+    	width: 100%;
     }
     .header .side-menu{
-    	z-index: 999;
+    	z-index: 9999;
     }
 
     .contact-info{
     	width: 100%;
     }
+
+    .page-container .section .grid-3 .service-container .overlay .wave1{
+    	background-size: 140% 45%;
+    }
+    .page-container .section .grid-3 .service-container .overlay .wave2{
+		background-size: 150% 45%;
+		background-position: 37% bottom;
+    }
+    .header .side-menu ul li {
+	    padding: 5px 10px;
+	    a{
+	    	height: 40px;
+	    }
+	}
+
+	.page-container .section .scroll-icon{
+		display: none;
+	}
+
+	.header .weather-info{
+		font-size: 12px;
+		span img{
+			width: 20px;
+		}
+	}
+
+	.page-container .section .grid-2 .box-container .why-us li .why-us-text ,.page-container .section .grid-2 .box-container .why-us li{
+		height: auto;
+	}
+
+	.page-container .section .grid-2 .box-container{
+		padding:0 10px;
+	}
+
+	.page-container .section .grid-2 .box-container .why-us li .why-us-img{
+		width: 20%;
+		img{
+			width: 70%;
+		}
+	}
+
+	.reviews li,.page-container .section .grid-2{
+		height: auto;
+	}
+
+	.btns-group-large-green .btn{
+		width: auto;
+		font-size: 16px;
+	}
+
+	.btn, .btn-gold, .btn-small, .btn-green{
+		font-size: 16px;
+	}
+
+	.page-container .section .box-container{
+		padding:0 10px;
+	}
+	.page-container .section .home-tours li a .tour-details .tour-title,.page-container .section .home-tours li a{
+		height: auto;
+	}
+
+	.page-container .section .home-tours li a .tour-img .tour-img-container img{
+		width: 70px;
+		height: 70px;
+		min-width: auto;
+	    min-height: auto;
+	    max-width: auto;
+	}
+	.page-container .section .home-tours li a .tour-img .tour-img-container{
+		width: 70px;
+		height: 70px;
+		margin-top: 15px;
+	}
+	.page-container .section .home-tours li a .tour-img .popular{
+		width: 100%;
+    	height: 42px;
+    	font-size:12px;
+    	left: 0;
+	}
+	.page-container .section .home-tours li a .tour-details .tour-info .days , .page-container .section .home-tours li a .tour-details .tour-info .date{
+		width: 100%;
+	}
+	.page-container .section .home-tours li a .tour-details .tour-info .location{
+		margin-bottom: 0px;
+	}
+	.page-container .section .home-tours li a .tour-details{
+		width: 75%;
+		padding-left: 15px;
+	}
+
+	footer {
+	    height: 100%;
+	    background: #bcbcbc;
+	    overflow: visible;
+	    display: inline-block;
+	    .copy-right ,.powered{
+	    	float: none;
+	    	font-size:12px;
+	    	text-align: center;
+		    display: inline-block;
+		    width: 100%;
+	    }
+	}
+
+	.page-container .section h1 .top-line{
+		top: 0;
+	}
+	.modal{
+		z-index: 999999;
+	}
+
+	.tabs-holder{
+		margin: 30px 5px;
+	}
+
+	.nav-tabs .nav-link{
+		font-size:15px;
+	}
+	.page-container .inner-page .inner-page-header .white-title{
+		padding-top:110px;
+		margin-bottom: 30px;
+	}
+	.page-container .inner-page .inner-page-header .yellow-title{
+		padding-top:110px;
+	}
+	.tour .days-details .day .left-section, .tour .days-details .day .right-section{
+		    padding: 10px 10px 0 10px;
+	}
+
+	.tour .previuse-images #lightgallery a {
+	    width: 32%;
+	    margin-right: 1%;
+	    height: 100px;
+	}
+	.lg-backdrop{
+		z-index: 9999 !important;
+	}
+
+	.lg-outer{
+		z-index: 99999 !important;
+	}
   }
+
+
+  .page-container .mini-section .grid-2{
+		    padding: 0px 0px !important;
+	}
 
 
